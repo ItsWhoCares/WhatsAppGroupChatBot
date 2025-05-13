@@ -1,5 +1,5 @@
 import OpenAI from "openai";
-import { grokJailbreakPrompt } from "./utils/prompts";
+import { grokJailbreakPrompt } from "./utils/prompts.js";
 
 // Initialize the xAI client with API key and base URL
 const client = new OpenAI({
