@@ -46,7 +46,8 @@ export function messageHandler(sock) {
 
             if (quotedMessage) {
                 const quotedMessagePerson = context?.participant || context?.quotedMessage?.contextInfo?.participant;
-                question += `\n\nQuoted previous message from ${quotedMessagePerson}: ${JSON.stringify(quotedMessage)}` + "\n\n";
+                const name = NUMBER_MAP[quotedMessagePerson] || '@' + quotedMessagePerson.split('@')[0];
+                question += `\n\nQuoted previous message from ${name}: ${JSON.stringify(quotedMessage)}` + "\n\n";
             }
 
 
