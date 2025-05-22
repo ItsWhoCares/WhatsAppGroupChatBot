@@ -51,7 +51,7 @@ export function messageHandler(sock) {
             }
 
 
-            question += (msg?.pushName ? msg?.pushName + ': ' : '');
+            question += (msg?.pushName ? msg?.pushName + ': ' : '') + text;
 
             for (const [key, value] of Object.entries(NUMBER_MAP)) {
                 if (text.includes(key)) {
