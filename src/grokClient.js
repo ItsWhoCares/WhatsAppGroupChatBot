@@ -8,6 +8,11 @@ const client = new OpenAI({
 });
 const model = "grok-3-beta"; // Kept as per your code; could use "grok-3-latest" if preferred
 
+const search_parameters = {
+    "mode": "auto",
+    "sources": [{ "type": "web", "country": "IN" }, { "type": "news", "country": "IN" }, { "type": "x" }],
+}
+
 // Maximum number of messages (user + assistant) to keep in history
 const MAX_HISTORY_MESSAGES = 12;
 let chatHistory = []; // Stores the conversation history
@@ -36,6 +41,7 @@ export async function handleGrok(prompt) {
         // Call the xAI API with the model and messages
         const completion = await client.chat.completions.create({
             model,
+            search_parameters,
             messages
         });
 

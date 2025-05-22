@@ -17,7 +17,7 @@ const NUMBER_MAP = {
 
 /**
  * Creates a message handler bound to the socket
- * @param {import('baileys').AnyWASocket} sock
+ * @param {import('baileys').WASocket} sock
  * @returns {Function}
  */
 export function messageHandler(sock) {
