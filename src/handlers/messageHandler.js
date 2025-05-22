@@ -45,7 +45,8 @@ export function messageHandler(sock) {
             let quotedMessage = context?.quotedMessage?.conversation || context?.quotedMessage?.extendedTextMessage?.text;
 
             if (quotedMessage) {
-                question += `\n\nQuoted message: ${JSON.stringify(quotedMessage)}` + "\n\n";
+                const quotedMessagePerson = context?.participant || context?.quotedMessage?.contextInfo?.participant;
+                question += `\n\nQuoted previous message from ${quotedMessagePerson}: ${JSON.stringify(quotedMessage)}` + "\n\n";
             }
 
 
